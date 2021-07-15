@@ -1,0 +1,60 @@
+﻿@model IEnumerable<HomeApp.Models.Device>
+
+@{
+    ViewBag.Title = "DeviceIndex";
+}
+
+<h2>Devices</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateDevice")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Room)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.State)
+        </th>
+        <th></th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Room)
+        </td>
+        <td>
+            @if (item.State)
+            {
+                <p> On</p>
+            }
+            else
+            {
+                <p> Off </p>
+            }
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditDevice", new { Id = item.Id }, new { @class = "btn btn-warning" })
+        </td>
+        <td>
+            @using (Html.BeginForm("DeleteDevice", "Admin"))
+                {
+                @Html.Hidden("Id", item.Id)
+                <input type="submit"
+                       class="btn btn-danger"
+                       value="Delete" />
+            }
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,459 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="~/Content/LivingRoom.css" rel="stylesheet" />
+    <script src="jquery-3.5.1.min.js"></script>
+
+    <style>
+        #LRTable {
+            top: 18%;
+            left: 8%;
+            width: 25%;
+            border: 3px solid white;
+            border-collapse: collapse;
+            position: absolute;
+        }
+
+        td {
+            padding: 5px;
+            text-align: left;
+            color: white;
+            font-family: Eras ITC;
+            font-size: 1.1vw;
+        }
+
+        #LRHead {
+            font-size: 1.3vw;
+            font-family: Eras ITC;
+            color: white;
+            top: 13%;
+            left: 15%;
+            position: absolute;
+            text-shadow: 2px 2px 4px #000000;
+        }
+
+        #OTable {
+            top: 18%;
+            left: 35%;
+            width: 25%;
+            border: 3px solid white;
+            border-collapse: collapse;
+            position: absolute;
+        }
+
+        #OHead {
+            font-size: 1.3vw;
+            font-family: Eras ITC;
+            color: white;
+            top: 13%;
+            left: 44%;
+            position: absolute;
+            text-shadow: 2px 2px 4px #000000;
+        }
+
+        #onoff {
+            text-align: right;
+        }
+
+        #KTable {
+            top: 40%;
+            left: 8%;
+            width: 25%;
+            border: 3px solid white;
+            border-collapse: collapse;
+            position: absolute;
+        }
+
+        #KHead {
+            font-size: 1.3vw;
+            font-family: Eras ITC;
+            color: white;
+            top: 36%;
+            left: 16%;
+            position: absolute;
+            text-shadow: 2px 2px 4px #000000;
+        }
+
+        #BeRTable {
+            top: 52%;
+            left: 8%;
+            width: 25%;
+            border: 3px solid white;
+            border-collapse: collapse;
+            position: absolute;
+        }
+
+        #BeRHead {
+            font-size: 1.3vw;
+            font-family: Eras ITC;
+            color: white;
+            top: 47%;
+            left: 16%;
+            position: absolute;
+            text-shadow: 2px 2px 4px #000000;
+        }
+
+        #BaRTable {
+            top: 74%;
+            left: 8%;
+            width: 25%;
+            border: 3px solid white;
+            border-collapse: collapse;
+            position: absolute;
+        }
+
+        #BaRHead {
+            font-size: 1.3vw;
+            font-family: Eras ITC;
+            color: white;
+            top: 70%;
+            left: 16%;
+            position: absolute;
+            text-shadow: 2px 2px 4px #000000;
+        }
+
+        #STable {
+            top: 74%;
+            left: 35%;
+            width: 25%;
+            border: 3px solid white;
+            border-collapse: collapse;
+            position: absolute;
+        }
+
+        #SHead {
+            font-size: 1.3vw;
+            font-family: Eras ITC;
+            color: white;
+            top: 70%;
+            left: 44%;
+            position: absolute;
+            text-shadow: 2px 2px 4px #000000;
+        }
+
+        #onoff1, #onoff2, #onoff3, #onoff4, #onoff5, #onoff6, #onoff7, #onoff8, #onoff9, #onoff10, #onoff11, #onoff12, #onoff13, #onoff14 {
+            padding: 5px;
+            text-align: right;
+            color: coral;
+            font-family: Eras ITC;
+            font-size: 1.1vw;
+        }
+    </style>
+
+    <script>
+        function change1() {
+            var text = document.getElementById('onoff1');
+            if (text.textContent.match("ON")) {
+                $("#onoff1").text("OFF");
+                $("#onoff1").css("color", "coral");
+            }
+            else {
+                $("#onoff1").text("ON");
+                $("#onoff1").css("color", "green");
+            };
+
+        }
+
+        function change2() {
+            var text = document.getElementById('onoff2');
+            if (text.textContent.match("ON")) {
+                $("#onoff2").text("OFF");
+                $("#onoff2").css("color", "coral");
+            }
+            else {
+                $("#onoff2").text("ON");
+                $("#onoff2").css("color", "green");
+            };
+
+        }
+
+        function change3() {
+            var text = document.getElementById('onoff3');
+            if (text.textContent.match("ON")) {
+                $("#onoff3").text("OFF");
+                $("#onoff3").css("color", "coral");
+            }
+            else {
+                $("#onoff3").text("ON");
+                $("#onoff3").css("color", "green");
+            };
+
+        }
+
+        function change4() {
+            var text = document.getElementById('onoff4');
+            if (text.textContent.match("ON")) {
+                $("#onoff4").text("OFF");
+                $("#onoff4").css("color", "coral");
+            }
+            else {
+                $("#onoff4").text("ON");
+                $("#onoff4").css("color", "green");
+            };
+
+        }
+
+        function change5() {
+            var text = document.getElementById('onoff5');
+            if (text.textContent.match("ON")) {
+                $("#onoff5").text("OFF");
+                $("#onoff5").css("color", "coral");
+            }
+            else {
+                $("#onoff5").text("ON");
+                $("#onoff5").css("color", "green");
+            };
+
+        }
+
+        function change6() {
+            var text = document.getElementById('onoff6');
+            if (text.textContent.match("ON")) {
+                $("#onoff6").text("OFF");
+                $("#onoff6").css("color", "coral");
+            }
+            else {
+                $("#onoff6").text("ON");
+                $("#onoff6").css("color", "green");
+            };
+
+        }
+
+        function change7() {
+            var text = document.getElementById('onoff7');
+            if (text.textContent.match("ON")) {
+                $("#onoff7").text("OFF");
+                $("#onoff7").css("color", "coral");
+            }
+            else {
+                $("#onoff7").text("ON");
+                $("#onoff7").css("color", "green");
+            };
+
+        }
+
+        function change8() {
+            var text = document.getElementById('onoff8');
+            if (text.textContent.match("ON")) {
+                $("#onoff8").text("OFF");
+                $("#onoff8").css("color", "coral");
+            }
+            else {
+                $("#onoff8").text("ON");
+                $("#onoff8").css("color", "green");
+            };
+
+        }
+
+        function change9() {
+            var text = document.getElementById('onoff9');
+            if (text.textContent.match("ON")) {
+                $("#onoff9").text("OFF");
+                $("#onoff9").css("color", "coral");
+            }
+            else {
+                $("#onoff9").text("ON");
+                $("#onoff9").css("color", "green");
+            };
+
+        }
+
+        function change10() {
+            var text = document.getElementById('onoff10');
+            if (text.textContent.match("ON")) {
+                $("#onoff10").text("OFF");
+                $("#onoff10").css("color", "coral");
+            }
+            else {
+                $("#onoff10").text("ON");
+                $("#onoff10").css("color", "green");
+            };
+
+        }
+
+        function change11() {
+            var text = document.getElementById('onoff11');
+            if (text.textContent.match("ON")) {
+                $("#onoff11").text("OFF");
+                $("#onoff11").css("color", "coral");
+            }
+            else {
+                $("#onoff11").text("ON");
+                $("#onoff11").css("color", "green");
+            };
+
+        }
+
+        function change12() {
+            var text = document.getElementById('onoff12');
+            if (text.textContent.match("ON")) {
+                $("#onoff12").text("OFF");
+                $("#onoff12").css("color", "coral");
+            }
+            else {
+                $("#onoff12").text("ON");
+                $("#onoff12").css("color", "green");
+            };
+
+        }
+
+        function change13() {
+            var text = document.getElementById('onoff13');
+            if (text.textContent.match("ON")) {
+                $("#onoff13").text("OFF");
+                $("#onoff13").css("color", "coral");
+            }
+            else {
+                $("#onoff13").text("ON");
+                $("#onoff13").css("color", "green");
+            };
+
+        }
+
+        function change14() {
+            var text = document.getElementById('onoff14');
+            if (text.textContent.match("ON")) {
+                $("#onoff14").text("OFF");
+                $("#onoff14").css("color", "coral");
+            }
+            else {
+                $("#onoff14").text("ON");
+                $("#onoff14").css("color", "green");
+            };
+
+        }
+    </script>
+
+</head>
+<body style="background-image:url('../../Content/Images/bglights.jpg');">
+
+    <span id="LRHead">Living Room Lights</span>
+    <table id="LRTable">
+        <tbody>
+            <tr>
+                <td>Spot lights</td>
+                <td id="onoff">
+                    <text id="onoff1" onclick="change1()" style="cursor:pointer;">OFF</text>
+                </td>
+            </tr>
+            <tr>
+                <td>Led</td>
+                <td id="onoff">
+                    <text id="onoff2" onclick="change2()" style="cursor:pointer;">OFF</text>
+                </td>
+            </tr>
+            <tr>
+                <td>Chandelier</td>
+                <td id="onoff">
+                    <text id="onoff3" onclick="change3()" style="cursor:pointer;">OFF</text>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <span id="OHead">Other Lights</span>
+    <table id="OTable">
+        <tbody>
+            <tr>
+                <td>Front door light</td>
+                <td id="onoff">
+                    <text id="onoff4" onclick="change4()" style="cursor:pointer;">OFF</text>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <span id="KHead">Kitchen Lights</span>
+    <table id="KTable">
+        <tbody>
+            <tr>
+                <td>Spot lights</td>
+                <td id="onoff">
+                    <text id="onoff5" onclick="change5()" style="cursor:pointer;">OFF</text>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <span id="BeRHead">Bedroom Lights</span>
+    <table id="BeRTable">
+        <tbody>
+            <tr>
+                <td>Floor Lamp</td>
+                <td id="onoff">
+                    <text id="onoff6" onclick="change6()" style="cursor:pointer;">OFF</text>
+                </td>
+            </tr>
+            <tr>
+                <td>Wall lights</td>
+                <td id="onoff">
+                    <text id="onoff7" onclick="change7()" style="cursor:pointer;">OFF</text>
+                </td>
+            </tr>
+            <tr>
+                <td>Lamps</td>
+                <td id="onoff">
+                    <text id="onoff8" onclick="change8()" style="cursor:pointer;">OFF</text>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <span id="BaRHead">Bathroom Lights</span>
+    <table id="BaRTable">
+        <tbody>
+            <tr>
+                <td>Mirror Led</td>
+                <td id="onoff">
+                    <text id="onoff9" onclick="change9()" style="cursor:pointer;">OFF</text>
+                </td>
+            </tr>
+            <tr>
+                <td>Spot lights</td>
+                <td id="onoff">
+                    <text id="onoff10" onclick="change10()" style="cursor:pointer;">OFF</text>
+                </td>
+            </tr>
+            <tr>
+                <td>Leds</td>
+                <td id="onoff">
+                    <text id="onoff11" onclick="change11()" style="cursor:pointer;">OFF</text>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <span id="SHead">Studio Lights</span>
+    <table id="STable">
+        <tbody>
+            <tr>
+                <td>Chandelier</td>
+                <td id="onoff">
+                    <text id="onoff12" onclick="change12()" style="cursor:pointer;">OFF</text>
+                </td>
+            </tr>
+            <tr>
+                <td>Spot lights</td>
+                <td id="onoff">
+                    <text id="onoff13" onclick="change13()" style="cursor:pointer;">OFF</text>
+                </td>
+            </tr>
+            <tr>
+                <td>Floor lamp</td>
+                <td id="onoff">
+                    <text id="onoff14" onclick="change14()" style="cursor:pointer;">OFF</text>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

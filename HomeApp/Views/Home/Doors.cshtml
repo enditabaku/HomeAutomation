@@ -1,0 +1,200 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="~/Content/LivingRoom.css" rel="stylesheet" />
+    <script src="jquery-3.5.1.min.js"></script>
+
+    <style>
+        #LRTable {
+            top: 42%;
+            left: 12%;
+            width: 40%;
+            border: 3px solid #6A6663;
+            border-collapse: collapse;
+            position: absolute;
+        }
+
+        td {
+            padding: 10px;
+            text-align: left;
+            color: #6A6663;
+            font-family: Eras ITC;
+            font-size: 1.2vw;
+        }
+
+
+        #onoff {
+            text-align: right;
+        }
+
+
+
+        #onoff1, #onoff2, #onoff3, #onoff4, #onoff5, #onoff6, #onoff7 {
+            padding: 5px;
+            text-align: right;
+            color: coral;
+            font-family: Eras ITC;
+            font-size: 1.2vw;
+        }
+    </style>
+
+    <script>
+        function change1() {
+            var text = document.getElementById('onoff1');
+            if (text.textContent.match("Open")) {
+                $("#onoff1").text("Closed");
+                $("#onoff1").css("color", "coral");
+            }
+            else {
+                $("#onoff1").text("Open");
+                $("#onoff1").css("color", "green");
+            };
+
+        }
+
+        function change2() {
+            var text = document.getElementById('onoff2');
+            if (text.textContent.match("Open")) {
+                $("#onoff2").text("Closed");
+                $("#onoff2").css("color", "coral");
+            }
+            else {
+                $("#onoff2").text("Open");
+                $("#onoff2").css("color", "green");
+            };
+
+        }
+
+        function change3() {
+            var text = document.getElementById('onoff3');
+            if (text.textContent.match("Open")) {
+                $("#onoff3").text("Closed");
+                $("#onoff3").css("color", "coral");
+            }
+            else {
+                $("#onoff3").text("Open");
+                $("#onoff3").css("color", "green");
+            };
+
+        }
+
+        function change4() {
+            var text = document.getElementById('onoff4');
+            if (text.textContent.match("Open")) {
+                $("#onoff4").text("Closed");
+                $("#onoff4").css("color", "coral");
+            }
+            else {
+                $("#onoff4").text("Open");
+                $("#onoff4").css("color", "green");
+            };
+
+        }
+
+        function change5() {
+            var text = document.getElementById('onoff5');
+            if (text.textContent.match("Open")) {
+                $("#onoff5").text("Closed");
+                $("#onoff5").css("color", "coral");
+            }
+            else {
+                $("#onoff5").text("Open");
+                $("#onoff5").css("color", "green");
+            };
+
+        }
+
+        function change6() {
+            var text = document.getElementById('onoff6');
+            if (text.textContent.match("Open")) {
+                $("#onoff6").text("Closed");
+                $("#onoff6").css("color", "coral");
+            }
+            else {
+                $("#onoff6").text("Open");
+                $("#onoff6").css("color", "green");
+            };
+
+        }
+
+        function change7() {
+            var text = document.getElementById('onoff7');
+            if (text.textContent.match("Open")) {
+                $("#onoff7").text("Closed");
+                $("#onoff7").css("color", "coral");
+            }
+            else {
+                $("#onoff7").text("Open");
+                $("#onoff7").css("color", "green");
+            };
+
+        }
+
+    </script>
+
+</head>
+<body style="background-image:url('../../Content/Images/bgdoors.jpg'); ">
+
+    <span style="font-family:'Eras ITC';font-size:2.8vw; top:15%;left:47%; position:absolute;  text-shadow: 2px 2px 4px #000000;"> <b>Doors</b></span>
+    <table id="LRTable">
+        <tbody>
+            <tr>
+                <td>Front Door</td>
+                <td id="onoff">
+                    <text id="onoff1" onclick="change1()" style="cursor:pointer;">Closed</text>
+                </td>
+            </tr>
+            <tr>
+                <td>Living Room Door</td>
+                <td id="onoff">
+                    <text id="onoff2" onclick="change2()" style="cursor:pointer;">Closed</text>
+                </td>
+            </tr>
+            <tr>
+                <td>Kitchen Room</td>
+                <td id="onoff">
+                    <text id="onoff3" onclick="change3()" style="cursor:pointer;">Closed</text>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Bedroom Door</td>
+                <td id="onoff">
+                    <text id="onoff4" onclick="change4()" style="cursor:pointer;">Closed</text>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Bathroom Door</td>
+                <td id="onoff">
+                    <text id="onoff5" onclick="change5()" style="cursor:pointer;">Closed</text>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Studio Door</td>
+                <td id="onoff">
+                    <text id="onoff6" onclick="change6()" style="cursor:pointer;">Closed</text>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Back Door</td>
+                <td id="onoff">
+                    <text id="onoff7" onclick="change7()" style="cursor:pointer;">Closed</text>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+</body>
+</html>

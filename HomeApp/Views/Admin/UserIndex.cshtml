@@ -1,0 +1,45 @@
+﻿@model IEnumerable<HomeApp.Models.User>
+
+@{
+    ViewBag.Title = "UserIndex";
+}
+
+<h2>Users</h2>
+
+<p>
+    @Html.ActionLink("Create New User", "CreateUser")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>Relation to Owner</th>
+        <th></th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @Html.HiddenFor(modelItem=>item.Id)
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RelationToOwner)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditUser", new { userId=item.Id }, new { @class = "btn btn-warning" }) </td>
+        <td>
+            @using (Html.BeginForm("DeleteUser", "Admin"))
+                {
+                @Html.Hidden("userId", item.Id)
+                <input type="submit"
+                       class="btn btn-danger"
+                       value="Delete" />
+            }
+        </td>
+    </tr>
+}
+
+</table>

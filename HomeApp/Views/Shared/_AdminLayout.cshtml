@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <title>
+
+        @ViewBag.Title
+    </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script>
+        $(function () {
+            $('nav').animate({ opacity:1});
+        });
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse" style="opacity:0.1;">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="@Url.Action("Index","Admin")">
+                    <img src="~/Content/Images/logo.png" style="width:6%" />
+                </a>
+            </div>
+            <ul class="nav navbar-nav navbar-left"><li class=""><a href="@Url.Action("Index","Admin")" style="font-family:'Eras ITC';font-size:1.6vw;">E-Home</a></li></ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="@Url.Action("AdminLights","Admin")" style="font-family:'Eras ITC'">Lights</a></li>
+                <li><a href="@Url.Action("AdminDoors","Admin")" style="font-family:'Eras ITC'">Doors</a></li>
+                <li class="dropdown" style="margin-right:20px;">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="font-family:'Eras ITC'">Rooms<span class="caret"></span></a>
+                    <ul class="dropdown-menu" style="background-color:#F2CFB2;">
+                        <li><a href="@Url.Action("AdminLivingRoom","Admin")" style="font-family:'Eras ITC'">Living room</a></li>
+                        <li><a href="@Url.Action("AdminKitchen","Admin")" style="font-family:'Eras ITC'">Kitchen</a></li>
+                        <li><a href="@Url.Action("AdminBedRoom","Admin")" style="font-family:'Eras ITC'">Bedroom</a></li>
+                        <li><a href="@Url.Action("AdminBathroom","Admin")" style="font-family:'Eras ITC'">Bathroom</a></li>
+                        <li><a href="@Url.Action("AdminStudio","Admin")" style="font-family:'Eras ITC'">Studioroom</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown" style="margin-right:20px">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="font-family:'Eras ITC'">Modifications<span class="caret"></span></a>
+                    <ul class="dropdown-menu" style="background-color:#F2CFB2;">
+                        <li><a href="#" style="font-family:'Eras ITC'">Users</a></li>
+                        <li><a href="#" style="font-family:'Eras ITC'">Devices</a></li>
+                        <li><a href="#" style="font-family:'Eras ITC'">Doors</a></li>
+                        <li><a href="#" style="font-family:'Eras ITC'">Lights</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown" style="margin-right:20px;">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span></a>
+                    <ul class="dropdown-menu">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li><a href="@Url.Action("LogOut","User")" style="font-family:'Eras ITC'">Log Out</a></li>
+                        }
+                        else
+                        {
+                            <li><a href="@Url.Action("Login","User")" style="font-family:'Eras ITC'">Sign In as User</a></li>
+                            <li><a href="@Url.Action("Login","Account")" style="font-family:'Eras ITC'">Sign In as Admin</a></li>
+                        }
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+</body>
+</html>

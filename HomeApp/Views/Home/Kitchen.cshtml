@@ -1,0 +1,121 @@
+﻿@{
+    ViewBag.Title = "Kitchen";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="~/Content/LivingRoom.css" rel="stylesheet" />
+    <script src="jquery-3.5.1.min.js"></script>
+    <script>
+        $(function () {
+            $('div').animate({ opacity: 1 });
+        });
+    </script>
+    <script>
+        function change() {
+            var text = document.getElementById('onoff');
+            if(text.textContent.match("ON")){
+                $("#onoff").text("OFF");
+                $("#onoff").css("color", "coral");
+            }
+            else{
+                $("#onoff").text("ON");
+                $("#onoff").css("color", "green");
+            };
+
+        }
+        function change2() {
+            var text = document.getElementById('onoff2');
+            if (text.textContent.match("ON")) {
+                $("#onoff2").text("OFF");
+                $("#onoff2").css("color", "coral");
+            }
+            else {
+                $("#onoff2").text("ON");
+                $("#onoff2").css("color", "green");
+            };
+
+        }
+        function change3() {
+            var text = document.getElementById('onoff3');
+            if (text.textContent.match("ON")) {
+                $("#onoff3").text("OFF");
+                $("#onoff3").css("color", "coral");
+            }
+            else {
+                $("#onoff3").text("ON");
+                $("#onoff3").css("color", "green");
+            };
+
+        }
+        function change4() {
+            var text = document.getElementById('onoff4');
+            if (text.textContent.match("ON")) {
+                $("#onoff4").text("OFF");
+                $("#onoff4").css("color", "coral");
+            }
+            else {
+                $("#onoff4").text("ON");
+                $("#onoff4").css("color", "green");
+            };
+
+        }
+
+    </script>
+</head>
+<body style="background-image:url('../../Content/Images/bgkitchen.jpg');">
+
+    <div class="grid-container2">
+
+        <div>
+            <img src="~/Content/Images/dishwasher.png" class="img-circle" style="width:50px;height:50px; float:left; margin-top:30px; margin-left:10px;" />
+            <br /> <br />
+            <text style="font-family:'Eras ITC';font-size:70%; float:left; margin-left:10px;">Dish Washer</text>
+            <br /><br />
+
+            <text id="onoff" onclick="change()" style="font-family:'Eras ITC';font-size:50%; color:coral; float:right; margin-right:10px; cursor:pointer;">OFF</text>
+        </div>
+
+
+
+        <div>
+            <img src="~/Content/Images/oven.jpg" class="img-circle" style="width:50px;height:50px; float:left; margin-top:30px; margin-left:10px;" />
+            <br /> <br />
+            <text style="font-family:'Eras ITC';font-size:70%; float:left; margin-left:10px;">Oven</text>
+            <br /><br />
+
+            <text id="onoff2" onclick="change2()" style="font-family:'Eras ITC';font-size:50%; color:coral; float:right; margin-right:10px; cursor:pointer;">OFF</text>
+        </div>
+
+
+
+        <div>
+            <img src="~/Content/Images/fridge.png" class="img-circle" style="width:50px;height:50px; float:left; margin-top:30px; margin-left:10px;" />
+            <br /> <br />
+            <text style="font-family:'Eras ITC';font-size:70%; float:left; margin-left:10px;">Refrigerator</text>
+            <br /><br />
+
+            <text id="onoff3" onclick="change3()" style="font-family:'Eras ITC';font-size:50%; color:coral; float:right; margin-right:10px; cursor:pointer;">OFF</text>
+        </div>
+
+        <div>
+            <img src="~/Content/Images/camera.jpg" class="img-circle" style="width:50px;height:50px; float:left; margin-top:30px; margin-left:10px;" />
+            <br /> <br />
+            <text style="font-family:'Eras ITC';font-size:70%; float:left; margin-left:10px;">Camera</text>
+            <br /><br />
+
+            <text id="onoff4" onclick="change4()" style="font-family:'Eras ITC';font-size:50%; color:coral; float:right; margin-right:10px; cursor:pointer;">OFF</text>
+        </div>
+
+
+
+    </div>
+
+
+</body>
+</html>

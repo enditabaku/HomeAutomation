@@ -1,0 +1,502 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A747F054-6137-4F16-9665-9A7B0CF09E47}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HomeApp</RootNamespace>
+    <AssemblyName>HomeApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.2</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Common, Version=3.3.2.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.Common.3.3.2\lib\net45\Ninject.Web.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Common.WebHost, Version=3.3.2.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.Common.WebHost.3.3.2\lib\net45\Ninject.Web.Common.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\air conditioner.png" />
+    <Content Include="Content\Images\bathroom.jpg" />
+    <Content Include="Content\Images\bathroomlogo.jpg" />
+    <Content Include="Content\Images\bedroom.jpg" />
+    <Content Include="Content\Images\bedroomlogo.jpg" />
+    <Content Include="Content\Images\bg.jpg" />
+    <Content Include="Content\Images\bg1.jpg" />
+    <Content Include="Content\Images\bg10.jpg" />
+    <Content Include="Content\Images\bg11.jpg" />
+    <Content Include="Content\Images\bg12.jpg" />
+    <Content Include="Content\Images\bg2.jpg" />
+    <Content Include="Content\Images\bgbathroom.jpg" />
+    <Content Include="Content\Images\bgbedroom.jpg" />
+    <Content Include="Content\Images\bgdoors.jpg" />
+    <Content Include="Content\Images\bgkitchen.jpg" />
+    <Content Include="Content\Images\bgkitchen2.jpg" />
+    <Content Include="Content\Images\bglights.jpg" />
+    <Content Include="Content\Images\bglivingroom.jpg" />
+    <Content Include="Content\Images\bgstudio.jpg" />
+    <Content Include="Content\Images\camera.jpg" />
+    <Content Include="Content\Images\curtains.jpg" />
+    <Content Include="Content\Images\dishwasher.png" />
+    <Content Include="Content\Images\dryer.png" />
+    <Content Include="Content\Images\fireplace.png" />
+    <Content Include="Content\Images\fridge.png" />
+    <Content Include="Content\Images\garagedoor.jpg" />
+    <Content Include="Content\Images\home-automation.jpg" />
+    <Content Include="Content\Images\kitchen.jpg" />
+    <Content Include="Content\Images\kitchenlogo.jpg" />
+    <Content Include="Content\Images\living-room.jpg" />
+    <Content Include="Content\Images\livingroom.jpg" />
+    <Content Include="Content\Images\logo.png" />
+    <Content Include="Content\Images\lroom.jpg" />
+    <Content Include="Content\Images\lroomlogo.jpg" />
+    <Content Include="Content\Images\off.jpg" />
+    <Content Include="Content\Images\on.jpg" />
+    <Content Include="Content\Images\oven.jpg" />
+    <Content Include="Content\Images\room1.jpg" />
+    <Content Include="Content\Images\room2.png" />
+    <Content Include="Content\Images\shower.png" />
+    <Content Include="Content\Images\Smart-Home-Automation.jpg" />
+    <Content Include="Content\Images\studioroom.jpg" />
+    <Content Include="Content\Images\studioroomlogo.jpg" />
+    <Content Include="Content\Images\tv.png" />
+    <Content Include="Content\Images\washer.jpg" />
+    <Content Include="Content\Index.css" />
+    <Content Include="Content\LivingRoom.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Media\bg.jpg" />
+    <Content Include="scripts\ai.0.22.9-build00167.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="scripts\bootstrap.bundle.js" />
+    <Content Include="scripts\bootstrap.bundle.min.js" />
+    <Content Include="scripts\bootstrap.js" />
+    <Content Include="scripts\bootstrap.min.js" />
+    <Content Include="scripts\esm\popper-utils.js" />
+    <Content Include="scripts\esm\popper-utils.min.js" />
+    <Content Include="scripts\esm\popper.js" />
+    <Content Include="scripts\esm\popper.min.js" />
+    <Content Include="scripts\index.js.flow" />
+    <Content Include="scripts\esm\popper.min.js.map" />
+    <Content Include="scripts\esm\popper.js.map" />
+    <Content Include="scripts\esm\popper-utils.min.js.map" />
+    <Content Include="scripts\esm\popper-utils.js.map" />
+    <Content Include="scripts\bootstrap.min.js.map" />
+    <Content Include="scripts\bootstrap.js.map" />
+    <Content Include="scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="scripts\jquery-1.10.2.js" />
+    <Content Include="scripts\jquery-1.10.2.min.js" />
+    <Content Include="scripts\jquery-1.10.2.min.map" />
+    <None Include="scripts\jquery-3.5.1.intellisense.js" />
+    <Content Include="scripts\jquery-3.5.1.js" />
+    <Content Include="scripts\jquery-3.5.1.min.js" />
+    <Content Include="scripts\jquery-3.5.1.slim.js" />
+    <Content Include="scripts\jquery-3.5.1.slim.min.js" />
+    <Content Include="scripts\modernizr-2.6.2.js" />
+    <Content Include="scripts\popper-utils.js" />
+    <Content Include="scripts\popper-utils.min.js" />
+    <Content Include="scripts\popper.js" />
+    <Content Include="scripts\popper.min.js" />
+    <Content Include="scripts\src\index.js" />
+    <Content Include="scripts\src\methods\defaults.js" />
+    <Content Include="scripts\src\methods\destroy.js" />
+    <Content Include="scripts\src\methods\disableEventListeners.js" />
+    <Content Include="scripts\src\methods\enableEventListeners.js" />
+    <Content Include="scripts\src\methods\placements.js" />
+    <Content Include="scripts\src\methods\update.js" />
+    <Content Include="scripts\src\modifiers\applyStyle.js" />
+    <Content Include="scripts\src\modifiers\arrow.js" />
+    <Content Include="scripts\src\modifiers\computeStyle.js" />
+    <Content Include="scripts\src\modifiers\flip.js" />
+    <Content Include="scripts\src\modifiers\hide.js" />
+    <Content Include="scripts\src\modifiers\index.js" />
+    <Content Include="scripts\src\modifiers\inner.js" />
+    <Content Include="scripts\src\modifiers\keepTogether.js" />
+    <Content Include="scripts\src\modifiers\offset.js" />
+    <Content Include="scripts\src\modifiers\preventOverflow.js" />
+    <Content Include="scripts\src\modifiers\shift.js" />
+    <Content Include="scripts\src\utils\clockwise.js" />
+    <Content Include="scripts\src\utils\computeAutoPlacement.js" />
+    <Content Include="scripts\src\utils\debounce.js" />
+    <Content Include="scripts\src\utils\find.js" />
+    <Content Include="scripts\src\utils\findCommonOffsetParent.js" />
+    <Content Include="scripts\src\utils\findIndex.js" />
+    <Content Include="scripts\src\utils\getBordersSize.js" />
+    <Content Include="scripts\src\utils\getBoundaries.js" />
+    <Content Include="scripts\src\utils\getBoundingClientRect.js" />
+    <Content Include="scripts\src\utils\getClientRect.js" />
+    <Content Include="scripts\src\utils\getFixedPositionOffsetParent.js" />
+    <Content Include="scripts\src\utils\getOffsetParent.js" />
+    <Content Include="scripts\src\utils\getOffsetRect.js" />
+    <Content Include="scripts\src\utils\getOffsetRectRelativeToArbitraryNode.js" />
+    <Content Include="scripts\src\utils\getOppositePlacement.js" />
+    <Content Include="scripts\src\utils\getOppositeVariation.js" />
+    <Content Include="scripts\src\utils\getOuterSizes.js" />
+    <Content Include="scripts\src\utils\getParentNode.js" />
+    <Content Include="scripts\src\utils\getPopperOffsets.js" />
+    <Content Include="scripts\src\utils\getReferenceNode.js" />
+    <Content Include="scripts\src\utils\getReferenceOffsets.js" />
+    <Content Include="scripts\src\utils\getRoot.js" />
+    <Content Include="scripts\src\utils\getRoundedOffsets.js" />
+    <Content Include="scripts\src\utils\getScroll.js" />
+    <Content Include="scripts\src\utils\getScrollParent.js" />
+    <Content Include="scripts\src\utils\getStyleComputedProperty.js" />
+    <Content Include="scripts\src\utils\getSupportedPropertyName.js" />
+    <Content Include="scripts\src\utils\getViewportOffsetRectRelativeToArtbitraryNode.js" />
+    <Content Include="scripts\src\utils\getWindow.js" />
+    <Content Include="scripts\src\utils\getWindowSizes.js" />
+    <Content Include="scripts\src\utils\includeScroll.js" />
+    <Content Include="scripts\src\utils\index.js" />
+    <Content Include="scripts\src\utils\isBrowser.js" />
+    <Content Include="scripts\src\utils\isFixed.js" />
+    <Content Include="scripts\src\utils\isFunction.js" />
+    <Content Include="scripts\src\utils\isIE.js" />
+    <Content Include="scripts\src\utils\isModifierEnabled.js" />
+    <Content Include="scripts\src\utils\isModifierRequired.js" />
+    <Content Include="scripts\src\utils\isNumeric.js" />
+    <Content Include="scripts\src\utils\isOffsetContainer.js" />
+    <Content Include="scripts\src\utils\removeEventListeners.js" />
+    <Content Include="scripts\src\utils\runModifiers.js" />
+    <Content Include="scripts\src\utils\setAttributes.js" />
+    <Content Include="scripts\src\utils\setStyles.js" />
+    <Content Include="scripts\src\utils\setupEventListeners.js" />
+    <Content Include="scripts\umd\popper-utils.js" />
+    <Content Include="scripts\umd\popper-utils.min.js" />
+    <Content Include="scripts\umd\popper.js" />
+    <Content Include="scripts\umd\popper.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="scripts\umd\popper.min.js.map" />
+    <Content Include="scripts\umd\popper.js.map" />
+    <Content Include="scripts\umd\popper.js.flow" />
+    <Content Include="scripts\umd\popper-utils.min.js.map" />
+    <Content Include="scripts\umd\popper-utils.js.map" />
+    <Content Include="scripts\README.md" />
+    <Content Include="scripts\popper.min.js.map" />
+    <Content Include="scripts\popper.js.map" />
+    <Content Include="scripts\popper-utils.min.js.map" />
+    <Content Include="scripts\popper-utils.js.map" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Bathroom.cshtml" />
+    <Content Include="Views\Home\Bedroom.cshtml" />
+    <Content Include="Views\Home\Doors.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Kitchen.cshtml" />
+    <Content Include="Views\Home\Lights.cshtml" />
+    <Content Include="Views\Home\LivingRoom.cshtml" />
+    <Content Include="Views\Home\Studio.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\User\Register.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\IDeviceRepository.cs" />
+    <Compile Include="Abstract\IDoorRepository.cs" />
+    <Compile Include="Abstract\ILightRepository.cs" />
+    <Compile Include="Abstract\IUserRepository.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Concrete\DeviceRepository.cs" />
+    <Compile Include="Concrete\DoorRepository.cs" />
+    <Compile Include="Concrete\HomeContext.cs" />
+    <Compile Include="Concrete\LightRepository.cs" />
+    <Compile Include="Concrete\UserRepository.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\FormsAuthProvider.cs" />
+    <Compile Include="Infrastructure\IAuthProvider.cs" />
+    <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
+    <Compile Include="Migrations\202012131820389_CreatedDatabase.cs" />
+    <Compile Include="Migrations\202012131820389_CreatedDatabase.designer.cs">
+      <DependentUpon>202012131820389_CreatedDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012131856118_FixedConnectionString.cs" />
+    <Compile Include="Migrations\202012131856118_FixedConnectionString.designer.cs">
+      <DependentUpon>202012131856118_FixedConnectionString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012242048296_ChangesInDatabase.cs" />
+    <Compile Include="Migrations\202012242048296_ChangesInDatabase.designer.cs">
+      <DependentUpon>202012242048296_ChangesInDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012242227150_AddedRelationToOwnerPropertyAndValidationMessagesInUser.cs" />
+    <Compile Include="Migrations\202012242227150_AddedRelationToOwnerPropertyAndValidationMessagesInUser.designer.cs">
+      <DependentUpon>202012242227150_AddedRelationToOwnerPropertyAndValidationMessagesInUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Configuration.cs" />
+    <Compile Include="Models\Device.cs" />
+    <Compile Include="Models\Door.cs" />
+    <Compile Include="Models\Light.cs" />
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="scripts\jquery-3.5.1.slim.min.map" />
+    <Content Include="scripts\jquery-3.5.1.min.map" />
+    <Content Include="Views\Admin\UserIndex.cshtml" />
+    <Content Include="Views\Admin\LightIndex.cshtml" />
+    <Content Include="Views\Admin\DoorIndex.cshtml" />
+    <Content Include="Views\Admin\DeviceIndex.cshtml" />
+    <Content Include="Views\Admin\CreateUser.cshtml" />
+    <Content Include="Views\Home\PublicLivingRoom.cshtml" />
+    <Content Include="Views\Home\PublicBathRoom.cshtml" />
+    <Content Include="Views\Home\PublicBedroom.cshtml" />
+    <Content Include="Views\Home\PublicDoors.cshtml" />
+    <Content Include="Views\Home\PublicKitchen.cshtml" />
+    <Content Include="Views\Home\PublicLights.cshtml" />
+    <Content Include="Views\Home\PublicStudio.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Admin\EditUser.cshtml" />
+    <Content Include="Views\Admin\EditLight.cshtml" />
+    <Content Include="Views\Admin\EditDoor.cshtml" />
+    <Content Include="Views\Admin\EditDevice.cshtml" />
+    <Content Include="Views\Admin\AdminLivingRoom.cshtml" />
+    <Content Include="Views\Admin\AdminKitchen.cshtml" />
+    <Content Include="Views\Admin\AdminBedRoom.cshtml" />
+    <Content Include="Views\Admin\AdminBathRoom.cshtml" />
+    <Content Include="Views\Admin\AdminStudio.cshtml" />
+    <Content Include="Views\Admin\AdminLights.cshtml" />
+    <Content Include="Views\Admin\AdminDoors.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Public\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202012131820389_CreatedDatabase.resx">
+      <DependentUpon>202012131820389_CreatedDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012131856118_FixedConnectionString.resx">
+      <DependentUpon>202012131856118_FixedConnectionString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012242048296_ChangesInDatabase.resx">
+      <DependentUpon>202012242048296_ChangesInDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012242227150_AddedRelationToOwnerPropertyAndValidationMessagesInUser.resx">
+      <DependentUpon>202012242227150_AddedRelationToOwnerPropertyAndValidationMessagesInUser.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61390</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:61390/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

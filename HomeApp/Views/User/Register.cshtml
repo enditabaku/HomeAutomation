@@ -1,0 +1,31 @@
+﻿@model HomeApp.Models.User
+
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2><i> Create new account </i></h2>
+<p> Use the form below to create a new account. </p>
+<text style="color:red"> @ViewBag.Message</text>
+@using (Html.BeginForm(true))
+{
+    <div class="form-group">
+        <label> User name </label> <br />
+        @Html.ValidationMessageFor(m => m.Name)<br />
+        @Html.TextBoxFor(m => m.Name)
+    </div>
+    <div class="form-group">
+        <label> Password </label> <br />
+        @Html.ValidationMessageFor(m => m.Password)<br />
+        @Html.PasswordFor(m => m.Password)
+
+    </div>
+    <div class="form-group">
+        <label> Confirm password </label><br />
+        @Html.ValidationMessageFor(m => m.ConfirmPassword)<br />
+        @Html.PasswordFor(m => m.ConfirmPassword)
+
+    </div>
+    <input type="submit" value="Register" class="btn btn-warning" />
+}

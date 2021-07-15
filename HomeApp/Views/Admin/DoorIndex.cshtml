@@ -1,0 +1,51 @@
+﻿@model IEnumerable<HomeApp.Models.Door>
+
+@{
+    ViewBag.Title = "DoorIndex";
+}
+
+<h2>Doors</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateDoor")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.State)
+        </th>
+        <th></th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @if (item.State)
+            {
+                <p> Open </p>
+            }
+            else { <p> Closed </p>}
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditDoor", new { Id = item.Id }, new { @class = "btn btn-warning" })
+        </td>
+        <td>
+            @using (Html.BeginForm("DeleteDoor", "Admin"))
+                {
+                @Html.Hidden("Id", item.Id)
+                <input type="submit"
+                       class="btn btn-danger"
+                       value="Delete" />
+            }
+        </td>
+    </tr>
+}
+
+</table>

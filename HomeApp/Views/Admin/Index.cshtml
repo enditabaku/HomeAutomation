@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<body style="background-color:black;">
+    <h2 style="font-family:'Eras ITC'; color:white;"> Welcome to the administration panel</h2>
+    <a href="@Url.Action("UserIndex")" class="btn btn-dark" style="color:#8FD1CE;">See and manage users</a>
+    <br />
+    <a href="@Url.Action("DeviceIndex")" class="btn btn-dark" style="color:#8FD1CE;">See and manage devices</a>
+    <br />
+    <a href="@Url.Action("LightIndex")" class="btn btn-dark" style="color:#8FD1CE;"> See and manage lights </a>
+    <br />
+    <a href="@Url.Action("DoorIndex")" class="btn btn-dark" style="color:#8FD1CE;"> See and manage doors </a>
+
+</body>

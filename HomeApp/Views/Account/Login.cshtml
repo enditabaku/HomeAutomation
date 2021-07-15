@@ -1,0 +1,30 @@
+﻿@model HomeApp.Models.LoginModel
+
+@{
+    ViewBag.Title = "Admin: Log In";
+}
+<body style="background-image: url('../../Media/bg.jpg');">
+    <div class="panel" style="background-color:black; width:60%; margin-left:20%;">
+        <div class="panel-heading" style="background-color:black;">
+            <h3 style="color:white; font-family:Calibri;"> Log In </h3>
+        </div>
+        <div class="panel-body" style="background-color:black;">
+            <p class="lead" style="color:white;"> Please log in to access the administration area: </p>
+            <text style="color:#CC4C82;"> @ViewBag.Message</text>
+            @using (Html.BeginForm(true))
+            {
+                <div class="form-group" style="color:#CC4C82;">
+                    <label style="color:#A0C8D7; font-family:Calibri;"> User Name: </label>
+                    @Html.ValidationMessageFor(m => m.Username)<br />
+                    @Html.TextBoxFor(m => m.Username, new { @class = "form-control" })
+                </div>
+                <div class="form-group" style="color:#CC4C82;">
+                    <label style="color:#A0C8D7; font-family:Calibri;"> Password: </label>
+                    @Html.ValidationMessageFor(m => m.Password)<br />
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                </div>
+                <input type="submit" value="Log In" class="btn btn-primary" style="color:white; font-family:Calibri;"/>
+            }
+        </div>
+    </div>
+</body>

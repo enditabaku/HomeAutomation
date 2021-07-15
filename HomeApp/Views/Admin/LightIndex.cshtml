@@ -1,0 +1,60 @@
+﻿@model IEnumerable<HomeApp.Models.Light>
+
+@{
+    ViewBag.Title = "LightIndex";
+}
+
+<h2>Lights</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateLight")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Room)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.State)
+        </th>
+        <th></th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Room)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Type)
+        </td>
+        <td>
+            @if (item.State)
+            {
+                <p> On </p>
+            }
+            else
+            {
+                <p> Off </p>
+            }
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditLight", new { Id = item.Id }, new { @class = "btn btn-warning" })
+        </td>
+        <td>
+            @using (Html.BeginForm("DeleteLight", "Admin"))
+                {
+                @Html.Hidden("Id", item.Id)
+                <input type="submit"
+                       class="btn btn-danger"
+                       value="Delete" />
+            }
+        </td>
+    </tr>
+}
+
+</table>
